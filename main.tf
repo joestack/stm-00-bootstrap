@@ -3,8 +3,6 @@ terraform {
 }
 
 
-provider null {}
-
 resource "null_resource" "foo" {
   
   triggers = {
@@ -15,9 +13,9 @@ resource "null_resource" "foo" {
     command = "echo $AWS_ACCESS_KEY_ID > ${path.root}/aws_access_key_id"
   }
   
-  locals {
-  #secret_access_key = var.aws_secret_access_key
-  #session_token = var.aws_session_token
-  access_key_id = file("${path.root}/aws_access_key_id")
-  }
+  # locals {
+  # #secret_access_key = var.aws_secret_access_key
+  # #session_token = var.aws_session_token
+  # access_key_id = file("${path.root}/aws_access_key_id")
+  # }
 }
