@@ -1,4 +1,4 @@
-variable "aws_access_key_id" {
+variable "AWS_ACCESS_KEY_ID" {
   
 }
 
