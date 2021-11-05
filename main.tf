@@ -11,12 +11,10 @@ resource "null_resource" "foo" {
   provisioner "local-exec" {
     command = "echo $AWS_ACCESS_KEY_ID > ${path.root}/aws_access_key_id"
   }
-}
-
-
-
-locals {
+  
+  locals {
   #secret_access_key = var.aws_secret_access_key
   #session_token = var.aws_session_token
   access_key_id = file("${path.root}/aws_access_key_id")
+  }
 }
