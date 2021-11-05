@@ -2,6 +2,9 @@ terraform {
   required_version = ">= 0.12"
 }
 
+
+provider null {}
+
 resource "null_resource" "foo" {
   
   triggers = {
