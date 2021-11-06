@@ -6,4 +6,5 @@ variable "tfc_token" {}
 
 output "tfc_token" {
   value = var.tfc_token
+  sensitive = true
 }
