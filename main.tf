@@ -24,8 +24,10 @@ provider "github" {
 resource "github_repository" "example" {
   name        = "tf-provider-example"
   description = "My programmatic generated page"
+ 
+  visibility = "public"
 
-  private = false
+  auto_init = true
 
 }
 
