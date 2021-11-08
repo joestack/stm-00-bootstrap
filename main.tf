@@ -8,23 +8,14 @@ terraform {
 }
 
 provider "tfe" {
-  #hostname = var.hostname
+  hostname = var.tfc_host
   token    = var.tfc_token
   #version  = "~> 0.26.0"
 }
 
-resource "tfe_workspace" "test" {
+resource "tfe_workspace" "stm-10-foundation" {
   name         = "stm-10-foundation"
   organization = "joestack"
   #tag_names    = ["test", "app"]
 }
-
-
-variable "tfc_token" {}
-
-output "tfc_token" {
-  value = var.tfc_token
-  sensitive = true
-}
-
 
