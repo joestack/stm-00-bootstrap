@@ -4,6 +4,10 @@ terraform {
     tfe = {
       version = "~> 0.26.0"
     }
+    github = {
+      source  = "integrations/github"
+      version = "~> 4.0"
+    }
   }
 }
 
@@ -13,9 +17,21 @@ provider "tfe" {
   #version  = "~> 0.26.0"
 }
 
-resource "tfe_workspace" "stm-10-foundation" {
-  name         = "stm-10-foundation"
-  organization = "joestack"
-  #tag_names    = ["test", "app"]
+provider "github" {
+  token = var.github_token
 }
+
+resource "github_repository" "example" {
+  name        = "tf-provider-example"
+  description = "My programmatic generated page"
+
+  private = false
+
+}
+
+# resource "tfe_workspace" "stm-10-foundation" {
+#   name         = "stm-10-foundation"
+#   organization = "joestack"
+#   #tag_names    = ["test", "app"]
+# }
 
