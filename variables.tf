@@ -8,4 +8,4 @@ variable "tfc_org" {
   default = "joestack"
 }
 
-variable "TF_VAR_KEY1" {}
+variable "KEY1" {}
