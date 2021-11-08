@@ -27,7 +27,7 @@ resource "github_repository" "stm-10-foundation" {
  
   visibility = "public"
 
-  #auto_init = true
+  auto_init = true
 
 }
 
@@ -37,7 +37,7 @@ resource "github_repository" "stm-20-bastion" {
  
   visibility = "public"
 
-  #auto_init = true
+  auto_init = true
 
 }
 
@@ -47,7 +47,7 @@ resource "github_repository" "stm-30-ptfe" {
  
   visibility = "public"
 
-  #auto_init = true
+  auto_init = true
 
 }
 
