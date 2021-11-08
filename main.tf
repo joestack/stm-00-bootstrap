@@ -21,8 +21,8 @@ provider "github" {
   token = var.github_token
 }
 
-resource "github_repository" "example" {
-  name        = "tf-provider-example"
+resource "github_repository" "stm-10-foundation" {
+  name        = "stm-10-foundation"
   description = "My programmatic generated page"
  
   visibility = "public"
@@ -31,9 +31,13 @@ resource "github_repository" "example" {
 
 }
 
-# resource "tfe_workspace" "stm-10-foundation" {
-#   name         = "stm-10-foundation"
-#   organization = "joestack"
-#   #tag_names    = ["test", "app"]
-# }
+resource "tfe_workspace" "stm-10-foundation" {
+  name         = "stm-10-foundation"
+  organization = "joestack"
+  #tag_names    = ["test", "app"]
+  vcs_repo {
+    identifier = github_repository.stm-10-foundation.full_name
+    oauth_token_id = var.oauth_token_id
+  }
+}
 
