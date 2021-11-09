@@ -25,3 +25,7 @@ output "pri_key" {
   value = var.pri_key
   sensitive = true
 }
+
+output "aws_region" {
+  value = var.aws_region
+}
