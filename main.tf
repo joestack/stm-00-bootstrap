@@ -21,35 +21,32 @@ provider "github" {
   token = var.github_token
 }
 
+
+### Creating GitHub Repos ###
+
 resource "github_repository" "stm-10-foundation" {
   name        = "stm-10-foundation"
   description = "My programmatic generated page"
- 
   visibility = "public"
-
   auto_init = true
-
 }
 
 resource "github_repository" "stm-20-bastion" {
   name        = "stm-20-bastion"
   description = "My programmatic generated page"
- 
   visibility = "public"
-
   auto_init = true
-
 }
 
 resource "github_repository" "stm-30-ptfe" {
   name        = "stm-30-ptfe"
   description = "My programmatic generated page"
- 
   visibility = "public"
-
   auto_init = true
-
 }
+
+### Creating TFC Workspaces and connect them to the GitHub Repos ###
+
 
 resource "tfe_workspace" "stm-10-foundation" {
   name         = "stm-10-foundation"
@@ -62,7 +59,7 @@ resource "tfe_workspace" "stm-10-foundation" {
   allow_destroy_plan = true
   auto_apply = true
   global_remote_state = true 
-  queue_all_runs = true 
+  queue_all_runs = false  
   terraform_version = "1.0.10" 
 }
 
@@ -77,7 +74,7 @@ resource "tfe_workspace" "stm-20-bastion" {
   allow_destroy_plan = true
   auto_apply = true
   global_remote_state = true 
-  queue_all_runs = true 
+  queue_all_runs = false 
   terraform_version = "1.0.10"
 }
 
@@ -92,6 +89,6 @@ resource "tfe_workspace" "stm-30-ptfe" {
   allow_destroy_plan = true
   auto_apply = true
   global_remote_state = true 
-  queue_all_runs = true 
+  queue_all_runs = false 
   terraform_version = "1.0.10"
 }
