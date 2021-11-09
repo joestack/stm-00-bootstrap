@@ -23,4 +23,5 @@ output "dns_domain" {
 
 output "pri_key" {
   value = var.pri_key
+  sensitive = true
 }
