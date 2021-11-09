@@ -1,0 +1,27 @@
+### Creating GitHub Repos ###
+
+resource "github_repository" "stm-20-bastion" {
+  name        = "stm-20-bastion"
+  description = "My programmatic generated page"
+  visibility = "public"
+  auto_init = true
+}
+
+### Creating TFC Workspaces and connect them to the GitHub Repos ###
+
+
+resource "tfe_workspace" "stm-20-bastion" {
+  name         = "stm-20-bastion"
+  organization = "joestack"
+  #tag_names    = ["test", "app"]
+  vcs_repo {
+    identifier = github_repository.stm-20-bastion.full_name
+    oauth_token_id = var.oauth_token_id
+  }
+  allow_destroy_plan = true
+  auto_apply = true
+  global_remote_state = true 
+  queue_all_runs = false 
+  terraform_version = "1.0.10"
+}
+
