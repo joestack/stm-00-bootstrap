@@ -28,21 +28,21 @@ resource "github_repository" "stm-10-foundation" {
   name        = "stm-10-foundation"
   description = "My programmatic generated page"
   visibility = "public"
-  #auto_init = true
+  auto_init = true
 }
 
 resource "github_repository" "stm-20-bastion" {
   name        = "stm-20-bastion"
   description = "My programmatic generated page"
   visibility = "public"
-  #auto_init = true
+  auto_init = true
 }
 
 resource "github_repository" "stm-30-ptfe" {
   name        = "stm-30-ptfe"
   description = "My programmatic generated page"
   visibility = "public"
-  #auto_init = true
+  auto_init = true
 }
 
 ### Creating TFC Workspaces and connect them to the GitHub Repos ###
