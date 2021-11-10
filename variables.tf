@@ -12,10 +12,10 @@ variable "tfc_org" {
   default = "joestack"
 }
 
-variable "aws_region" {
-  description = "AWS region"
-  default     = "eu-west-1"
-}
+#variable "aws_region" {
+#  description = "AWS region"
+#  default     = "eu-west-1"
+#}
 
 #variable "name" {
 #  description = "Unique name of the deployment"
@@ -32,4 +32,4 @@ variable "aws_region" {
 #  default     = "192.168.0.0/16"
 #}
 
-variable "pri_key" {}
+#variable "pri_key" {}

@@ -14,7 +14,6 @@ terraform {
 provider "tfe" {
   hostname = var.tfc_host
   token    = var.tfc_token
-  #version  = "~> 0.26.0"
 }
 
 provider "github" {
