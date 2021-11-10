@@ -83,7 +83,7 @@ resource "tfe_variable" "pri_key" {
   value        = var.pri_key
   category     = "terraform"
   sensitive    = true
-  workspace_id = tfe_workspace.stm-20-bastion
+  workspace_id = tfe_workspace.stm-20-bastion.id
   description  = "Private Key to connect to the bastionhost"
 }
 
