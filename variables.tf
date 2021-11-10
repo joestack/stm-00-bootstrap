@@ -12,6 +12,8 @@ variable "tfc_org" {
   default = "joestack"
 }
 
+variable "pri_key" {}
+
 #variable "aws_region" {
 #  description = "AWS region"
 #  default     = "eu-west-1"
@@ -32,4 +34,3 @@ variable "tfc_org" {
 #  default     = "192.168.0.0/16"
 #}
 
-#variable "pri_key" {}

@@ -78,6 +78,15 @@ resource "tfe_workspace" "stm-20-bastion" {
   terraform_version = "1.0.10"
 }
 
+resource "tfe_variable" "pri_key" {
+  key          = "pri_key"
+  value        = var.pri_key
+  category     = "terraform"
+  sensitive    = true
+  workspace_id = tfe_workspace.stm-20-bastion
+  description  = "Private Key to connect to the bastionhost"
+}
+
 resource "tfe_workspace" "stm-30-ptfe" {
   name         = "stm-30-ptfe"
   organization = "joestack"
