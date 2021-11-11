@@ -52,7 +52,7 @@ resource "github_repository" "stm-30-ptfe" {
 
 resource "tfe_workspace" "stm-10-foundation" {
   name         = "stm-10-foundation"
-  organization = "joestack"
+  organization = var.tfc_org
   #tag_names    = ["test", "app"]
   vcs_repo {
     identifier = github_repository.stm-10-foundation.full_name
@@ -79,7 +79,7 @@ resource "tfe_variable" "aws_region-10" {
 #### WORKSPACE stm-20 ###
 resource "tfe_workspace" "stm-20-bastion" {
   name         = "stm-20-bastion"
-  organization = "joestack"
+  organization = var.tfc_org
   #tag_names    = ["test", "app"]
   vcs_repo {
     identifier = github_repository.stm-20-bastion.full_name
@@ -115,7 +115,7 @@ resource "tfe_variable" "pri_key" {
 
 resource "tfe_workspace" "stm-30-ptfe" {
   name         = "stm-30-ptfe"
-  organization = "joestack"
+  organization = var.tfc_org
   #tag_names    = ["test", "app"]
   vcs_repo {
     identifier = github_repository.stm-30-ptfe.full_name

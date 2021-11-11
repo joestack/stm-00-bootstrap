@@ -9,7 +9,7 @@ variable "tfc_host" {
 }
 
 variable "tfc_org" {
-  default = "joestack"
+  default = "JoeStack"
 }
 
 variable "pri_key" {}
