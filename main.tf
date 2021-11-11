@@ -65,7 +65,7 @@ resource "tfe_workspace" "stm-10-foundation" {
   terraform_version = "1.0.10" 
 }
 
-resource "tfe_variable" "aws_region" {
+resource "tfe_variable" "aws_region-10" {
   key          = "aws_region"
   value        = var.aws_region
   category     = "terraform"
@@ -93,6 +93,14 @@ resource "tfe_workspace" "stm-20-bastion" {
 }
 // add bastion Variables 
 // secrets from variables.csv
+
+resource "tfe_variable" "aws_region-20" {
+  key          = "aws_region"
+  value        = var.aws_region
+  category     = "terraform"
+  workspace_id = tfe_workspace.stm-20-bastion.id
+  description  = "AWS Region to be used"
+}
 
 resource "tfe_variable" "pri_key" {
   key          = "pri_key"
