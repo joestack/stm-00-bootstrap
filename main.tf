@@ -69,7 +69,6 @@ resource "tfe_variable" "aws_region" {
   key          = "aws_region"
   value        = var.aws_region
   category     = "terraform"
-  sensitive    = true
   workspace_id = tfe_workspace.stm-10-foundation.id
   description  = "AWS Region to be used"
 }
