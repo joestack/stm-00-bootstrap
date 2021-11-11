@@ -46,7 +46,9 @@ resource "github_repository" "stm-30-ptfe" {
 }
 
 ### Creating TFC Workspaces and connect them to the GitHub Repos ###
+### adding Variables to Workspaces
 
+#### WORKSPACE stm-10 ###
 
 resource "tfe_workspace" "stm-10-foundation" {
   name         = "stm-10-foundation"
@@ -63,6 +65,19 @@ resource "tfe_workspace" "stm-10-foundation" {
   terraform_version = "1.0.10" 
 }
 
+resource "tfe_variable" "aws_region" {
+  key          = "aws_region"
+  value        = var.aws_region
+  category     = "terraform"
+  sensitive    = true
+  workspace_id = tfe_workspace.stm-10-foundation.id
+  description  = "AWS Region to be used"
+}
+
+// add foundation Variables 
+// secrets from variables.csv
+
+#### WORKSPACE stm-20 ###
 resource "tfe_workspace" "stm-20-bastion" {
   name         = "stm-20-bastion"
   organization = "joestack"
@@ -77,6 +92,8 @@ resource "tfe_workspace" "stm-20-bastion" {
   queue_all_runs = false 
   terraform_version = "1.0.10"
 }
+// add bastion Variables 
+// secrets from variables.csv
 
 resource "tfe_variable" "pri_key" {
   key          = "pri_key"
@@ -86,6 +103,8 @@ resource "tfe_variable" "pri_key" {
   workspace_id = tfe_workspace.stm-20-bastion.id
   description  = "Private Key to connect to the bastionhost"
 }
+
+#### WORKSPACE stm-30 ###
 
 resource "tfe_workspace" "stm-30-ptfe" {
   name         = "stm-30-ptfe"
@@ -101,3 +120,6 @@ resource "tfe_workspace" "stm-30-ptfe" {
   queue_all_runs = false 
   terraform_version = "1.0.10"
 }
+
+// add ptfe Variables 
+// secrets from variables.csv

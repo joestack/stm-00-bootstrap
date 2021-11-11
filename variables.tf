@@ -14,10 +14,10 @@ variable "tfc_org" {
 
 variable "pri_key" {}
 
-#variable "aws_region" {
-#  description = "AWS region"
-#  default     = "eu-west-1"
-#}
+variable "aws_region" {
+  description = "AWS region"
+  default     = "eu-west-1"
+}
 
 #variable "name" {
 #  description = "Unique name of the deployment"
