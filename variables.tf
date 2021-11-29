@@ -23,6 +23,8 @@ variable "hcp_client_id" {}
 
 variable "hcp_client_secret" {}
 
+variable "vault_admin_pw" {}
+
 
 #variable "name" {
 #  description = "Unique name of the deployment"
