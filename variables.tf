@@ -19,6 +19,11 @@ variable "aws_region" {
   default     = "eu-west-1"
 }
 
+variable "hcp_client_id" {}
+
+variable "hcp_client_secret" {}
+
+
 #variable "name" {
 #  description = "Unique name of the deployment"
 #  default = "joestack-stm"
