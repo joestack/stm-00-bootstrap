@@ -19,3 +19,12 @@ resource "tfe_workspace" "stm-14-hcp_vault_setup" {
   queue_all_runs = false  
   terraform_version = "1.0.10" 
 }
+
+resource "tfe_variable" "vault_admin_pw" {
+  key          = "vault_admin_pw"
+  value        = var.vault_admin_pw
+  category     = "terraform"
+  sensitive    = true
+  workspace_id = tfe_workspace.stm-14-hcp_vault_setup.id
+  description  = "Vault Admin password"
+}
